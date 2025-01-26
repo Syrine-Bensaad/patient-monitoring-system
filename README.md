@@ -76,7 +76,7 @@ Special thanks to the open-source community for providing the tools and librarie
 ## Contact
 For questions or feedback, please contact:
 
-Syrine Bensaad: syrine.bensaad@example.com
+Syrine Bensaad: syrine.bensaad@horizon-tech.tn
 
 GitHub: Syrine-Bensaad
 
