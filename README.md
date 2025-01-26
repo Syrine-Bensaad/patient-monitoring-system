@@ -59,13 +59,14 @@ iot-patient-monitoring/
 2. Start the services using Docker Compose:
    ```bash
    docker-compose up -d
+   
 3. Configure the MongoDB Sink Connector to stream data from Kafka to MongoDB.
    
-4.Run the IoT gateway to simulate patient data and send it to Kafka.
+4. Run the IoT gateway to simulate patient data and send it to Kafka.
 
-5.Monitor the Spark Streaming output and MongoDB data.
+5. Monitor the Spark Streaming output and MongoDB data.
 
-6.Run the alert system to detect abnormal health metrics.
+6. Run the alert system to detect abnormal health metrics.
 
 ---
 
