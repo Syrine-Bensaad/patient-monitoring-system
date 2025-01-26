@@ -39,13 +39,21 @@ This project is a **Big Data platform** for monitoring patient health metrics us
 
 ## Project Structure 
 iot-patient-monitoring/
+
 ├── docker-compose.yml # Docker configuration for all services
+
 ├── gateway/ # Contains the IoT gateway script
+
 │ └── gateway.py # Simulates IoT devices and sends data to Kafka
+
 ├── spark/ # Contains the Spark Streaming script
+
 │ └── streaming-temp.py # Processes streaming data from Kafka
+
 ├── alert.py # Monitors MongoDB and generates alerts
+
 ├── requirements.txt # Lists Python dependencies
+
 ├── README.md # Project documentation (this file)
 
 
