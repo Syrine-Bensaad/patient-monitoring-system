@@ -1,0 +1,18 @@
+# Ignore Python virtual environment
+venv/
+.env/
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# Ignore data folders (if you decide to persist Kafka or MongoDB data)
+kafka-data/
+mongo-data/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore Docker-related files (if any)
+docker-compose.override.yml
