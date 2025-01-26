@@ -4,43 +4,40 @@ This project is a **Big Data platform** for monitoring patient health metrics us
 
 ---
 
-## Table of Contents
-1. [Project Overview](#project-overview)
-2. [Technologies Used](#technologies-used)
-3. [Project Structure](#project-structure)
-4. [How to Run](#how-to-run)
-   - [Prerequisites](#prerequisites)
-   - [Step 1: Clone the Repository](#step-1-clone-the-repository)
-   - [Step 2: Start the Services](#step-2-start-the-services)
-   - [Step 3: Configure MongoDB Sink Connector](#step-3-configure-mongodb-sink-connector)
-   - [Step 4: Run the Gateway](#step-4-run-the-gateway)
-   - [Step 5: Monitor Data and Alerts](#step-5-monitor-data-and-alerts)
-5. [Project Architecture](#project-architecture)
-6. [License](#license)
+## What I Did
+1. **Designed the System Architecture**:
+   - Integrated IoT sensors, Kafka, Spark Streaming, and MongoDB to create a real-time patient monitoring system.
+   - Customized Kafka topics to organize patient data based on metrics (e.g., temperature, heart rate) and emergency states.
+
+2. **Simulated IoT Data**:
+   - Developed a Python script (`gateway.py`) to simulate IoT devices generating patient data (e.g., temperature, heart rate, oxygen levels) and sending it to Kafka.
+
+3. **Real-Time Data Processing**:
+   - Implemented a Spark Streaming application (`streaming-temp.py`) to process real-time patient data from Kafka.
+   - Calculated metrics (e.g., average temperature) over a 5-second window and displayed the results in the console.
+
+4. **Data Storage**:
+   - Configured MongoDB to store patient data, including sensor readings, patient information, and device details.
+   - Used Kafka Connect with the MongoDB Sink Connector to stream data from Kafka to MongoDB.
+
+5. **Alert System**:
+   - Developed an alert system (`alert.py`) to monitor MongoDB for abnormal health metrics (e.g., high temperature, low oxygen levels) and generate alerts.
+
+6. **Dockerized the Environment**:
+   - Created a `docker-compose.yml` file to containerize and run all services (Zookeeper, Kafka, MongoDB, Spark, and the IoT gateway).
 
 ---
 
-## Project Overview
-The goal of this project is to create a scalable and real-time patient monitoring system. The system consists of the following components:
-- **IoT Gateway**: Simulates IoT devices generating patient health data (e.g., temperature, heart rate, oxygen levels).
-- **Apache Kafka**: Streams the patient data from the IoT gateway to the processing layer.
-- **Apache Spark Streaming**: Processes the streaming data in real-time (e.g., calculates average temperature over a time window).
-- **MongoDB**: Stores the processed patient data for long-term analysis.
-- **Alert System**: Monitors the stored data and generates alerts for abnormal health metrics.
+## What Worked
+- **Real-Time Data Streaming**: Successfully streamed patient data from simulated IoT devices to Kafka.
+- **Real-Time Data Processing**: Spark Streaming processed the data in real-time and calculated metrics (e.g., average temperature) over a 5-second window.
+- **Data Storage**: Patient data was successfully stored in MongoDB using Kafka Connect.
+- **Alert System**: The alert system monitored MongoDB and generated alerts for abnormal health metrics.
+- **Docker Environment**: All services (Zookeeper, Kafka, MongoDB, Spark, and the IoT gateway) ran seamlessly in Docker containers.
 
 ---
 
-## Technologies Used
-- **Apache Kafka**: For real-time data streaming.
-- **Apache Spark Streaming**: For real-time data processing.
-- **MongoDB**: For storing patient data.
-- **Docker**: For containerizing and running the services.
-- **Python**: For the IoT gateway and alert system.
-- **Kafka Connect (MongoDB Sink Connector)**: For streaming data from Kafka to MongoDB.
-
----
-
-## Project Structure
+## Project Structure 
 iot-patient-monitoring/
 ├── docker-compose.yml # Docker configuration for all services
 ├── gateway/ # Contains the IoT gateway script
@@ -51,20 +48,35 @@ iot-patient-monitoring/
 ├── requirements.txt # Lists Python dependencies
 ├── README.md # Project documentation (this file)
 
+
 ---
 
 ## How to Run
-
-### Prerequisites
-- **Docker**: Install Docker from [here](https://docs.docker.com/get-docker/).
-- **Docker Compose**: Install Docker Compose from [here](https://docs.docker.com/compose/install/).
-- **Git**: Install Git from [here](https://git-scm.com/).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Syrine-Bensaad/patient-monitoring-system.git
+   cd patient-monitoring-system
+2. Start the services using Docker Compose:
+   ```bash
+   docker-compose up -d
+3. Configure the MongoDB Sink Connector to stream data from Kafka to MongoDB.
+4.Run the IoT gateway to simulate patient data and send it to Kafka.
+5.Monitor the Spark Streaming output and MongoDB data.
+6.Run the alert system to detect abnormal health metrics.
 
 ---
 
-### Step 1: Clone the Repository
-Clone the repository to your local machine:
-```bash
-git clone https://github.com/Syrine-Bensaad/patient-monitoring-system.git
-cd patient-monitoring-system
+## Acknowledgments
+This project was developed as part of a Big Data course.
+
+Special thanks to the open-source community for providing the tools and libraries used in this project.
+
+---
+
+## Contact
+For questions or feedback, please contact:
+
+Syrine Bensaad: syrine.bensaad@example.com
+
+GitHub: Syrine-Bensaad
 
