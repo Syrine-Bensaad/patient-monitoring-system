@@ -68,23 +68,3 @@ Clone the repository to your local machine:
 git clone https://github.com/Syrine-Bensaad/patient-monitoring-system.git
 cd patient-monitoring-system
 
-Step 2: Start the Services
-Start all the services (Zookeeper, Kafka, MongoDB, Spark, etc.) using Docker Compose:
-
-docker-compose up -d
-This will start the following services:
-
-Zookeeper: Manages Kafka brokers.
-
-Kafka: Handles real-time data streaming.
-
-MongoDB: Stores patient data.
-
-Spark Master: Manages the Spark cluster.
-
-Spark Worker: Executes Spark tasks.
-
-Gateway: Simulates IoT devices and sends data to Kafka.
-
-Step 3: Configure MongoDB Sink Connector
-Configure the MongoDB Sink Connector to stream data from Kafka to MongoDB:
